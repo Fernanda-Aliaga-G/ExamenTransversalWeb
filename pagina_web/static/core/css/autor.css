@@ -1,0 +1,31 @@
+
+.autor-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+.autor-card .card-img {
+    height: 200px; 
+    object-fit: cover; 
+}
+
+
+.autor-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+
+.autor-card .card-title {
+    margin: 0; 
+    padding: 0.5rem 0; 
+}
+
+.autor-card .card-text {
+    margin-top: auto;
+    padding: 0.5rem 0; 
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Biblioteca</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.css' %}" />
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+    
+    <link href="{% static 'core/css/font-awesome.min.css' %}" rel="stylesheet" />
+    
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
+    
+    <link href="{% static 'core/css/responsive.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/estilo.css' %}" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% block contenido-head %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <div class="hero_area">
+        
+        <header class="header_section long_section mx-4 bg-dark">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand text-success logo h1 align-self-center" href="{% url 'index' %}">
+                    <img src="{% static 'core/img/Duocbiblio.png' %}" alt="Logo" width="110"
+                        class="d-inline-block" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-white" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{% url 'libro' %}"> Libros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{% url 'autor' %}">Autores</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="quote_btn-container">
+                        <a href="javascript:void(0);" onclick="showLoginAlert()">
+                            <span>
+                                Login
+                            </span>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                        <form class="form-inline">
+                            <button class="btn  my-2 my-sm-0 nav_search-btn"  type="button" onclick="showSearchAlert()">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+        {% block contenido %}
+
+        {% endblock %}
+        
+        <section class="info_section long_section bg-dark mx-4">
+
+            <div class="container">
+
+
+                <div class="info_top ">
+                    <div class="row ">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="info_links">
+                                <h4>
+                                    Información
+                                </h4>
+                                <div class="info_links_menu">
+                                    <li>
+                                        <i class="fas fa-map-marker-alt fa-fw"></i>
+                                        Eliodoro Yáñez 1595, Providencia, Región Metropolitana
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone fa-fw"></i>
+                                        <a class="text-decoration-none" href="tel:56984192349">+569 123456789</a>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope fa-fw"></i>
+                                        <a class="text-decoration-none"
+                                            href="mailto:contacto@grupoc.com">contacto@BiblioDuocUC.com</a>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 pt-5 text-center">
+                            <h2 class="h2 text-light border-bottom pb-3 border-light">Navegar por la Página</h2>
+                            <ul class="list-unstyled footer-link-list">
+                                <li><a class="text-decoration-none text-white" href="{% url 'index' %}">Home</a></li>
+                                <li><a class="text-decoration-none text-white" href="{% url 'libro' %}">Libros</a></li>
+                                <li><a class="text-decoration-none text-white" href="{% url 'autor' %}">Autores</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info_form">
+                                <h4>
+                                    Ingresa para recibir ofertas
+                                </h4>
+                                <form action="">
+                                    <input type="text" placeholder="Ingresa tu email" />
+                                    <button type="aceptar">
+                                        Subscribir
+                                    </button>
+                                </form>
+                                <div class="social_box">
+                                    <a href="">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+        
+        <footer class="footer_section bg-dark mx-4">
+            <div class="container">
+                <p>
+                    Copyright &copy; <span id="displayYear"></span> Biblioteca DuocUc
+                </p>
+            </div>
+        </footer>
+        
+
+        <script>
+            function showLoginAlert() {
+                Swal.fire({
+                    title: 'Login',
+                    text: 'Función temporalmente no disponible',
+                    icon: 'info',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+
+            function showSearchAlert() {
+                Swal.fire({
+                    title: 'Buscar',
+                    text: 'Función temporalmente no disponible',
+                    icon: 'info',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        </script>
+        <script>
+            function showSearchAlert() {
+                Swal.fire({
+                    title: 'Buscar',
+                    text: 'Función temporalmente no disponible',
+                    icon: 'info',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        </script>
+
+        
+        <script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
+        
+        <script src="{% static 'core/js/bootstrap.js' %}"></script>
+        
+        <script src="{% static 'core/js/custom.js' %}"></script>
+        
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+        
+
+</body>
+
+</html>
